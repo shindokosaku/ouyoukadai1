@@ -1,0 +1,8 @@
+<h1>Editing Book</h1>
+
+<form>
+<%= render 'form', book: @book %>
+</form>
+# <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+<%= link_to 'Show', @book %> |
+<%= link_to 'Back', books_path %>
