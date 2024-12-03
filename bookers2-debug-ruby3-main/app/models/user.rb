@@ -5,10 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :books
-         has_one_attached :profile_image
+         
          validates :introduction, length:{ maximum: 50 }
          validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
          has_many :favorites, dependent: :destroy
+         has_many :book_comments, dependent: :destroy
+         has_one_attached :profile_image
   
   
   def get_profile_image
