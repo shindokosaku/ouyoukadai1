@@ -20,14 +20,15 @@
           <td><%= @book.body %></td>
 
           <td id="favorite_buttons_<%= @book.id %>" >
-           <%= render 'favorites/favorite', book: @book %>
+           <%= render 'favorites/favorite-btn', book: @book %>
           </td>
       
           <td><% if @book.user == current_user %>
            <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %>
            <% end %></td>
           <td><% if @book.user == current_user %>
-           <%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%>
+           
+           <%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger", remote:true, data: {"turbolinks" => false}%>
           <% end %></td>
           <td>コメント数：<%= @book.book_comments.count %></td>    
         </tr>
