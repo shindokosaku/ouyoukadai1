@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
     
     @range = params[:range]
 
-    if @range == "User"
-      @users = User.looks(params[:search], params[:word])
-    else
-      @books = Book.looks(params[:search], params[:word])
-    end
+    # if @range == "User"
+    #   @users = User.looks(params[:search], params[:word])
+    # else
+    #   @books = Book.looks(params[:search], params[:word])
+    # end
   end
 
   def after_sign_out_path_for(resource)

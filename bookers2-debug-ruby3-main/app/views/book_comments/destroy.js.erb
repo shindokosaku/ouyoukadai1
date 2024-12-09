@@ -1,2 +1,2 @@
-$('#BookComment').html("<%= j(render "books/show", book: @book) %>");
+$('#comments-area').html("<%= j(render "books/comment", book: @book, new_comment: @new_comment) %>");
 $('#comment_count').html("<%= @book.book_comments.count %>")
